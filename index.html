@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Rewild Denver</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Simple responsive reset */
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.4; background:#f5f7fa; color:#1f2d3a; }
+    header { background: linear-gradient(135deg,#2f8f4d,#5ac8a5); color:white; padding:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; }
+    h1 { font-size:1.5rem; margin-bottom:0.2rem; }
+    nav { display:flex; gap:1rem; flex-wrap:wrap; }
+    nav a { color:white; text-decoration:none; font-weight:600; }
+    main { padding:1rem; max-width:1100px; margin:0 auto; }
+    section { margin-top:2rem; padding:1rem; background:white; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
+    .flex { display:flex; gap:1rem; flex-wrap:wrap; }
+    .card { flex:1; min-width:260px; background:#fff; border-radius:10px; padding:1rem; position:relative; }
+    .badge { background:#2f8f4d; color:white; padding:4px 8px; border-radius:6px; font-size:0.65rem; display:inline-block; margin-bottom:6px; }
+    .btn { background:#2f8f4d; color:white; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600; }
+    .small { font-size:0.85rem; }
+    .grid { display:grid; gap:1rem; }
+    .map-wrapper { position:relative; width:100%; max-width:700px; }
+    .sidebar { min-width:280px; background:#eef2f7; border-radius:8px; padding:1rem; }
+    .hidden { display:none; }
+    .achievement { background:#fffbea; padding:8px; border:1px solid #d4c17a; border-radius:6px; margin-bottom:6px; }
+    .score-bar { background:#e1e8f5; border-radius:10px; overflow:hidden; height:16px; margin-top:4px; }
+    .score-fill { height:100%; transition:width .3s ease; background:#5ac8a5; }
+    .plant-list { margin-top:8px; }
+    .plant-item { margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; }
+    .tooltip { background:rgba(0,0,0,0.8); color:white; padding:6px 10px; border-radius:5px; position:absolute; z-index:10; font-size:0.75rem; pointer-events:none; }
+    .nav-highlight { text-decoration:underline; }
+    footer { margin-top:3rem; text-align:center; font-size:0.8rem; padding:1rem; color:#555; }
+    .infographic { display:flex; gap:1rem; flex-wrap:wrap; margin-top:8px; }
+    .infobox { flex:1; min-width:220px; background:#f0fcf9; border:1px solid #c7e9e4; border-radius:8px; padding:10px; }
+    /* Responsive */
+    @media (max-width:900px){
+      .flex { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Rewild Denver</h1>
+      <div class="small">Urban Rewilding for Biodiversity & Community</div>
+    </div>
+    <nav aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#game">Game</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home">
+      <div class="badge">What is Urban Rewilding?</div>
+      <p>Urban rewilding is restoring or reintegrating nature into cities to enhance ecological function, increase biodiversity, and improve human wellbeing. It includes reconnecting fragmented habitats, planting native species, and empowering communities to participate in resilient green infrastructure. These efforts improve wildlife corridors, reduce stormwater runoff, and offer psychological and recreational benefits. :contentReference[oaicite:7]{index=7}</p>
+      <div class="infographic">
+        <div class="infobox">
+          <strong>Ecological Benefits</strong>
+          <p>More native species, improved soil health, pollinator support, and natural pest regulation. :contentReference[oaicite:8]{index=8}</p>
+        </div>
+        <div class="infobox">
+          <strong>Social & Community</strong>
+          <p>Community gardens build connection, food security, skill-sharing, and local stewardship. :contentReference[oaicite:9]{index=9}</p>
+        </div>
+        <div class="infobox">
+          <strong>Local Focus: Denver</strong>
+          <p>Denver’s Urban Ecology program emphasizes native plant restoration and ecological corridors to support wildlife. :contentReference[oaicite:10]{index=10}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="badge">Why Denver?</div>
+      <div class="flex">
+        <div class="card">
+          <h2>Native Plants & Climate Adaptation</h2>
+          <p>Denver sits in a semi-arid Front Range environment; using native species like blue grama, buffalo grass, Rocky Mountain columbine, penstemons, and rabbitbrush reduces water demand while supporting evolved local wildlife. :contentReference[oaicite:11]{index=11}</p>
+          <div style="margin-top:6px;">
+            <img src="https://via.placeholder.com/250x140?text=Native+Plant" alt="Example native plant" style="width:100%; border-radius:6px;" />
+            <div class="small">Replace with real Colorado native plant images from Denver Audubon or CSU Extension. :contentReference[oaicite:12]{index=12}</div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Community Gardens</h2>
+          <p>Organizations like Denver Urban Gardens show how local plots regenerate soils, support pollinators, and supply food while educating residents and building climate resilience. :contentReference[oaicite:13]{index=13}</p>
+          <div style="margin-top:6px;">
+            <img src="https://via.placeholder.com/250x140?text=Community+Garden" alt="Community garden" style="width:100%; border-radius:6px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section id="solutions">
+      <div class="badge">Solutions</div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+        <div class="card">
+          <h3>Native Plant Corridors</h3>
+          <p>Link fragmented green spaces with linear plantings and yard-to-yard native buffers, creating pathways for pollinators and birds. :contentReference[oaicite:14]{index=14}</p>
+        </div>
+        <div class="card">
+          <h3>Community Gardens & Food Forests</h3>
+          <p>Convert vacant lots into managed community gardens to grow food, increase local engagement, and provide habitat islands. :contentReference[oaicite:15]{index=15}</p>
+        </div>
+        <div class="card">
+          <h3>Policy Integration</h3>
+          <p>Embed biodiversity goals into urban planning: connectivity, green/blue space quality, and inclusive access are core to effective rewilding. :contentReference[oaicite:16]{index=16}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game">
+      <div class="badge">Rewild Denver Game</div>
+      <div class="flex">
+        <!-- Map / interaction pane -->
+        <div class="card" style="flex:2;">
+          <h2>Neighborhood Map</h2>
+          <p>Select a neighborhood, then choose native species or habitats to plant. See immediate ecological feedback and build your biodiversity score.</p>
+          <div class="map-wrapper">
+            <!-- Simplified SVG map with clickable neighborhoods -->
+            <svg id="denver-map" viewBox="0 0 600 400" style="width:100%; border:1px solid #ccc; border-radius:8px;">
+              <!-- Background placeholder -->
+              <rect width="600" height="400" fill="#e8f0f7" />
+              <!-- Example neighborhoods as clickable shapes -->
+              <rect id="neigh-rino" x="60" y="80" width="140" height="100" fill="#a0d8b3" stroke="#2f8f4d" stroke-width="2" cursor="pointer" />
+              <text x="130" y="140" font-size="12" text-anchor="middle" fill="#1f2d3a">RiNo</text>
+
+              <rect id="neigh-capitol" x="240" y="60" width="140" height="100" fill="#ffe8b5" stroke="#d68f2f" stroke-width="2" cursor="pointer" />
+              <text x="310" y="120" font-size="12" text-anchor="middle" fill="#1f2d3a">Capitol Hill</text>
+
+              <rect id="neigh-fivepoints" x="140" y="200" width="140" height="100" fill="#f7d1e0" stroke="#a03f6b" stroke-width="2" cursor="pointer" />
+              <text x="210" y="260" font-size="12" text-anchor="middle" fill="#1f2d3a">Five Points</text>
+
+              <rect id="neigh-baker" x="340" y="210" width="120" height="100" fill="#c6e0ff" stroke="#2f6fb3" stroke-width="2" cursor="pointer" />
+              <text x="400" y="265" font-size="12" text-anchor="middle" fill="#1f2d3a">Baker</text>
+            </svg>
+          </div>
+          <div style="margin-top:8px;">
+            <div>Overall Biodiversity Score: <strong id="total-score">0</strong></div>
+            <div class="score-bar">
+              <div class="score-fill" id="score-fill" style="width:0%"></div>
+            </div>
+            <div class="small">Score increases when you plant native species or create habitat patches. Achievements unlock as you progress.</div>
+          </div>
+          <div id="achievements" style="margin-top:12px;">
+            <div><strong>Achievements:</strong></div>
+            <div id="ach-list">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar for neighborhood / planting -->
+        <div class="sidebar card" style="flex:1;">
+          <div id="neigh-header"><em>Select a neighborhood</em></div>
+          <div id="plant-controls" class="hidden">
+            <div>
+              <strong id="selected-neigh-name"></strong>
+            </div>
+            <div style="margin-top:8px;">
+              <label for="plant-select">Choose a native planting:</label>
+              <select id="plant-select" style="width:100%; padding:6px; border-radius:5px;">
+                <!-- Options populated by JS -->
+              </select>
+            </div>
+            <div style="margin-top:8px;">
+              <button class="btn" id="plant-btn">Plant</button>
+            </div>
+            <div id="feedback" style="margin-top:12px;"></div>
+            <div style="margin-top:12px;">
+              <div><strong>Neighborhood Score:</strong> <span id="neigh-score">0</span></div>
+              <div class="score-bar">
+                <div class="score-fill" id="neigh-score-fill" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+          <div id="no-selection" class="small">
+            Click a neighborhood on the map. Then choose from native options like pollinator garden, tree cluster, or pocket prairie to rewild it.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>Prototype for educational rewilding project. Replace placeholders with licensed images and expand plant database for a production version.</div>
+      <div>Sources include City of Denver Urban Ecology, Denver Audubon, Denver Urban Gardens, and academic research on urban rewilding. :contentReference[oaicite:17]{index=17}</div>
+    </footer>
+  </main>
+
+  <script>
+    // Static definition of available native plant/habitat types with impacts and descriptions
+    const PLANTS = [
+      {
+        id: 'pollinator-garden',
+        name: 'Pollinator Garden',
+        type: 'garden',
+        biodiversityValue: 5,
+        description: 'Provides nectar and habitat for bees, butterflies, and other pollinators. Native wildflowers attract a wide variety of insects. :contentReference[oaicite:18]{index=18}'
+      },
+      {
+        id: 'native-tree-cluster',
+        name: 'Native Tree Cluster',
+        type: 'tree',
+        biodiversityValue: 8,
+        description: 'Supports birds, improves air quality, and creates microhabitats. Using species adapted to Denver avoids excess water use. :contentReference[oaicite:19]{index=19}'
+      },
+      {
+        id: 'pocket-prairie',
+        name: 'Pocket Prairie',
+        type: 'prairie',
+        biodiversityValue: 6,
+        description: 'Restores native grassland patches (e.g., blue grama, buffalo grass) that support soil health and insects. :contentReference[oaicite:20]{index=20}'
+      },
+      {
+        id: 'shrub-thicket',
+        name: 'Shrub Thicket',
+        type: 'shrub',
+        biodiversityValue: 4,
+        description: 'Provides shelter and berries for birds; increases structural diversity. :contentReference[oaicite:21]{index=21}'
+      }
+    ];
+
+    // Game state
+    let neighborhoods = {
+      'RiNo': { score: 0, planted: [] },
+      'Capitol Hill': { score: 0, planted: [] },
+      'Five Points': { score: 0, planted: [] },
+      'Baker': { score: 0, planted: [] }
+    };
+
+    // Achievements thresholds
+    const ACHIEVEMENTS = [
+      { key: 'first-plant', name: 'First Seed', condition: state => state.totalScore >= 1, unlocked: false, desc: 'Make your first planting.' },
+      { key: 'pollinator-protector', name: 'Pollinator Protector', condition: state => state.plantedCountOf('pollinator-garden') >= 3, unlocked: false, desc: 'Plant 3 pollinator gardens.' },
+      { key: 'tree-guardian', name: 'Tree Guardian', condition: state => state.plantedCountOf('native-tree-cluster') >= 2, unlocked: false, desc: 'Plant 2 native tree clusters.' },
+      { key: 'urban-ecosystem', name: 'Urban Ecosystem Builder', condition: state => state.totalScore >= 30, unlocked: false, desc: 'Reach 30 biodiversity points.' }
+    ];
+
+    // Helpers for state access
+    function getTotalScore() {
+      return Object.values(neighborhoods).reduce((sum, n) => sum + n.score, 0);
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem('rewildState', JSON.stringify(neighborhoods));
+      } catch (e) {
+        console.warn('LocalStorage failed', e);
+      }
+    }
+
+    function loadState() {
+      try {
+        const stored = localStorage.getItem('rewildState');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          // merge only known keys
+          Object.keys(neighborhoods).forEach(k => {
+            if (parsed[k]) {
+              neighborhoods[k].score = parsed[k].score || 0;
+              neighborhoods[k].planted = parsed[k].planted || [];
+            }
+          });
+        }
+      } catch (e) {
+        console.warn('Failed to load state', e);
+      }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      loadState();
+      populatePlantOptions();
+      attachMapListeners();
+      refreshGlobalScore();
+      refreshAchievements();
+    });
+
+    // Populate the dropdown with plant choices
+    function populatePlantOptions() {
+      const select = document.getElementById('plant-select');
+      PLANTS.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = p.name;
+        select.appendChild(opt);
+      });
+    }
+
+    // Map click logic
+    function attachMapListeners() {
+      const names = Object.keys(neighborhoods);
+      names.forEach(name => {
+        const id = 'neigh-' + name.toLowerCase().replace(/\s+/g, '').replace('capitolhill', 'capitol'); // matching the SVG IDs
+        const elem = document.getElementById(id);
+        if (!elem) return;
+        elem.addEventListener('click', () => selectNeighborhood(name));
+      });
+
+      // Plant button
+      document.getElementById('plant-btn').addEventListener('click', () => {
+        const sel = document.getElementById('plant-select').value;
+        const neigh = window.currentNeighborhood;
+        if (!neigh || !sel) return;
+        const plant = PLANTS.find(p => p.id === sel);
+        if (!plant) return;
+        plantIntoNeighborhood(neigh, plant);
+      });
+    }
+
+    function selectNeighborhood(name) {
+      window.currentNeighborhood = name;
+      document.getElementById('no-selection').classList.add('hidden');
+      document.getElementById('plant-controls').classList.remove('hidden');
+      document.getElementById('selected-neigh-name').textContent = name;
+      document.getElementById('neigh-header').textContent = 'Rewild ' + name;
+      refreshNeighborhoodUI(name);
+    }
+
+    function plantIntoNeighborhood(name, plant) {
+      const info = neighborhoods[name];
+      // Prevent duplicate identical plant stack for simplicity (could be expanded)
+      info.planted.push({ id: plant.id, ts: Date.now() });
+      info.score += plant.biodiversityValue;
+      saveState();
+      refreshNeighborhoodUI(name);
+      refreshGlobalScore();
+      showFeedback(plant);
+      refreshAchievements();
+    }
+
+    function refreshNeighborhoodUI(name) {
+      const info = neighborhoods[name];
+      document.getElementById('neigh-score').textContent = info.score;
+      const percent = Math.min(100, (info.score / 50) * 100); // cap for bar visualization
+      document.getElementById('neigh-score-fill').style.width = percent + '%';
+    }
+
+    function refreshGlobalScore() {
+      const total = getTotalScore();
+      document.getElementById('total-score').textContent = total;
+      const percent = Math.min(100, (total / 100) * 100);
+      document.getElementById('score-fill').style.width = percent + '%';
+    }
+
+    function showFeedback(plant) {
+      const f = document.getElementById('feedback');
+      f.innerHTML = `
+        <div style="padding:8px; background:#e8ffe6; border-radius:6px;">
+          Planted <strong>${plant.name}</strong>.<br/>
+          +${plant.biodiversityValue} biodiversity points. <br/>
+          <div class="small">${plant.description}</div>
+        </div>
+      `;
+      setTimeout(() => { f.innerHTML = ''; }, 6000);
+    }
+
+    // Achievement evaluation helpers
+    const stateHelpers = {
+      totalScore: () => getTotalScore(),
+      plantedCountOf: (plantId) => {
+        return Object.values(neighborhoods)
+          .flatMap(n => n.planted.map(p => p.id))
+          .filter(id => id === plantId).length;
+      }
+    };
+
+    function refreshAchievements() {
+      const container = document.getElementById('ach-list');
+      container.innerHTML = '';
+      const currentState = {
+        totalScore: stateHelpers.totalScore(),
+        plantedCountOf: (id) => stateHelpers.plantedCountOf(id)
+      };
+      ACHIEVEMENTS.forEach(a => {
+        const achieved = a.condition(currentState);
+        if (achieved && !a.unlocked) {
+          a.unlocked = true; // mark
+        }
+        const div = document.createElement('div');
+        div.className = 'achievement';
+        div.innerHTML = `
+          <strong>${a.name}</strong> - ${a.desc} ${a.unlocked ? '<span style="color:green;">(Unlocked)</span>' : '<span style="color:#888;">(Locked)</span>'}
+        `;
+        container.appendChild(div);
+      });
+    }
+
+  </script>
+</body>
+</html>
